@@ -1,0 +1,41 @@
+\documentclass{jarticle}
+\usepackage{amsmath}
+\usepackage{listings}
+\lstset{
+  basicstyle = {\ttfamily},
+  frame = {tb}
+}
+
+\title{計算機システム演習　第７回レポート}
+\author{17B13541 \and 細木隆豊}
+\date{}
+
+\begin{document}
+  \maketitle
+  \section{テスト結果}
+  \begin{lstlisting}
+    first data of rdata1: 0
+    first data of rdata2: 0
+    second data of rdata1: 100
+    second data of rdata2: 0
+    third data of rdata1: 100
+    third data of rdata2: 0
+    fourth data of rdata1: 200
+    fourth data of rdata2: 0
+    fifth data of rdata1: 200
+    fifth data of rdata2: 200
+    InstMemory[0x04000000] = 350
+    InstMemory[0x04000004] = 100
+    InstMemory[0x04000008] = 200
+    rdata[0x10000004] : 0
+    rdata[0x10000008] : 0
+    rdata[0x10000004] : 0
+    rdata[0x10000004] : 300
+    rdata[0x10000008] : 200
+    rdata[0x10000008] : 200
+  \end{lstlisting}
+  \section{工夫点}
+  registerはregister\_write, read1, read2, write1, wdataに、inst\_memoryはaddr, instに、data\_memoryはmem\_write, mem\_read, addr, wdataの値によって変わる箇所がわかりやすいようなtestを実装した。
+  \section{感想}
+  inst\_memory\_runの一行目の説明"instにデータを送る"がどういう意味なのかわからず、無視してコードを書いたのですが問題ないのでしょうか。
+\end{document}
